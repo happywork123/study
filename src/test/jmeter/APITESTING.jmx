@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="3.1" jmeter="3.1 r1770033">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="测试计划" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="线程组" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1477493719000</longProp>
+        <longProp name="ThreadGroup.end_time">1477493719000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie 管理器" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+          <stringProp name="CookieManager.policy">standard</stringProp>
+          <stringProp name="CookieManager.implementation">org.apache.jmeter.protocol.http.control.HC4CookieHandler</stringProp>
+        </CookieManager>
+        <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP请求默认值" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${baseUrl}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="通用配置" enabled="true"/>
+        <hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Pro参数" enabled="true"/>
+          <hashTree>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="全局参数" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="userName" elementType="Argument">
+                  <stringProp name="Argument.name">userName</stringProp>
+                  <stringProp name="Argument.value">test@test.com</stringProp>
+                  <stringProp name="Argument.desc">用户登录账号</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="password" elementType="Argument">
+                  <stringProp name="Argument.name">password</stringProp>
+                  <stringProp name="Argument.value">XXXXX</stringProp>
+                  <stringProp name="Argument.desc">用户密码</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="loginUrl" elementType="Argument">
+                  <stringProp name="Argument.name">loginUrl</stringProp>
+                  <stringProp name="Argument.value">passport.patsnap.cn</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">登录URL</stringProp>
+                </elementProp>
+                <elementProp name="baseUrl" elementType="Argument">
+                  <stringProp name="Argument.name">baseUrl</stringProp>
+                  <stringProp name="Argument.value">analytics.patsnap.cn</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">网站基础URL</stringProp>
+                </elementProp>
+                <elementProp name="headReferer" elementType="Argument">
+                  <stringProp name="Argument.name">headReferer</stringProp>
+                  <stringProp name="Argument.value">http://analytics.patsnap.cn/</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">Header参数里的主网站URL地址</stringProp>
+                </elementProp>
+                <elementProp name="path--" elementType="Argument">
+                  <stringProp name="Argument.name">path--</stringProp>
+                  <stringProp name="Argument.value">/Users/zhangshu/Documents/Project/Automation/JmeterProject/src/test/java/Tools.java</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">本地java类</stringProp>
+                </elementProp>
+                <elementProp name="path" elementType="Argument">
+                  <stringProp name="Argument.name">path</stringProp>
+                  <stringProp name="Argument.value">C:\Users\patsnap\.jenkins\jobs\Web_Api_Testing_Pro\workspace\src\test\java\Tools.java</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">Jenkins  PRODUCTION java类</stringProp>
+                </elementProp>
+                <elementProp name="pathSave--" elementType="Argument">
+                  <stringProp name="Argument.name">pathSave--</stringProp>
+                  <stringProp name="Argument.value">/Users/zhangshu/Documents/Project/Automation/JmeterProject/src/test/jmeter/ZinputFile.csv</stringProp>
+                  <stringProp name="Argument.desc">中间保存文件路径</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pathSave" elementType="Argument">
+                  <stringProp name="Argument.name">pathSave</stringProp>
+                  <stringProp name="Argument.value">C:\Users\patsnap\.jenkins\jobs\Web_Api_Testing_Pro\workspace\src\test\jmeter\ZinputFile.csv</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">中间保存文件路径</stringProp>
+                </elementProp>
+                <elementProp name="client_id" elementType="Argument">
+                  <stringProp name="Argument.name">client_id</stringProp>
+                  <stringProp name="Argument.value">f58bbdfdd63549dbb64fed4b816c8bfc</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">项目ID</stringProp>
+                </elementProp>
+                <elementProp name="shortWait" elementType="Argument">
+                  <stringProp name="Argument.name">shortWait</stringProp>
+                  <stringProp name="Argument.value">1000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">短暂等待时间</stringProp>
+                </elementProp>
+                <elementProp name="middleWait" elementType="Argument">
+                  <stringProp name="Argument.name">middleWait</stringProp>
+                  <stringProp name="Argument.value">3000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">中等</stringProp>
+                </elementProp>
+                <elementProp name="longWait" elementType="Argument">
+                  <stringProp name="Argument.name">longWait</stringProp>
+                  <stringProp name="Argument.value">5000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">长</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Workspace通用参数" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="autoUpdateWorkspaceId" elementType="Argument">
+                  <stringProp name="Argument.name">autoUpdateWorkspaceId</stringProp>
+                  <stringProp name="Argument.value">ed802c2d1854438e9d983988be2288ce</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">监控自动收录脚本</stringProp>
+                </elementProp>
+                <elementProp name="autoUpdateFolderId" elementType="Argument">
+                  <stringProp name="Argument.name">autoUpdateFolderId</stringProp>
+                  <stringProp name="Argument.value">d01f90171433482387f19df09c44b40c</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">监控自动收录脚本以及迁移复制专利等</stringProp>
+                </elementProp>
+                <elementProp name="wsPatentId" elementType="Argument">
+                  <stringProp name="Argument.name">wsPatentId</stringProp>
+                  <stringProp name="Argument.value">CB70F1A474E54B2E0450D06D9886F1FF57350CBEE3FBEAB9D99130C5CC85268274FB05BDBBECEC1669E73842C1BA2F48F3EC5467A71C13016CF44DB660C6B76BF87E0A2626B541AF</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">标引搜索等对应的patent</stringProp>
+                </elementProp>
+                <elementProp name="wsPatent" elementType="Argument">
+                  <stringProp name="Argument.name">wsPatent</stringProp>
+                  <stringProp name="Argument.value">CN104639043A</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">ID对应的PN号</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Matrix通用参数" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="matrixWorkspace" elementType="Argument">
+                  <stringProp name="Argument.name">matrixWorkspace</stringProp>
+                  <stringProp name="Argument.value">ed802c2d1854438e9d983988be2288ce</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">矩阵分析Workspace</stringProp>
+                </elementProp>
+                <elementProp name="matrixFolder" elementType="Argument">
+                  <stringProp name="Argument.name">matrixFolder</stringProp>
+                  <stringProp name="Argument.value">d01f90171433482387f19df09c44b40c</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">矩阵分析Folder</stringProp>
+                </elementProp>
+                <elementProp name="matrixOption1" elementType="Argument">
+                  <stringProp name="Argument.name">matrixOption1</stringProp>
+                  <stringProp name="Argument.value">6ff71938fbd04d0fb6b33b587b7dc65b</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">三个分析option</stringProp>
+                </elementProp>
+                <elementProp name="matrixOption2" elementType="Argument">
+                  <stringProp name="Argument.name">matrixOption2</stringProp>
+                  <stringProp name="Argument.value">8515928757864ad09dc5c3be2dec79a6</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="matrixOption3" elementType="Argument">
+                  <stringProp name="Argument.name">matrixOption3</stringProp>
+                  <stringProp name="Argument.value">38841b4d3235440f953813996b87d4ac</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="PatentView通用参数" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="job_id_semantic" elementType="Argument">
+                  <stringProp name="Argument.name">job_id_semantic</stringProp>
+                  <stringProp name="Argument.value">e938f3c7-9fb9-4d0f-b5a3-815e55729ee9</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">semantic job id</stringProp>
+                </elementProp>
+                <elementProp name="job_id_insights" elementType="Argument">
+                  <stringProp name="Argument.name">job_id_insights</stringProp>
+                  <stringProp name="Argument.value">5356f522217c49cc9d76719b3b53085f</stringProp>
+                  <stringProp name="Argument.desc">insights job id</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pvp_workspace_id" elementType="Argument">
+                  <stringProp name="Argument.name">pvp_workspace_id</stringProp>
+                  <stringProp name="Argument.value">ed802c2d1854438e9d983988be2288ce</stringProp>
+                  <stringProp name="Argument.desc">workspace to patent view</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pvp_folder_id" elementType="Argument">
+                  <stringProp name="Argument.name">pvp_folder_id</stringProp>
+                  <stringProp name="Argument.value">d01f90171433482387f19df09c44b40c</stringProp>
+                  <stringProp name="Argument.desc">workspace  folder</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pvp_time" elementType="Argument">
+                  <stringProp name="Argument.name">pvp_time</stringProp>
+                  <stringProp name="Argument.value">1481868949515</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="shareUrl" elementType="Argument">
+                  <stringProp name="Argument.name">shareUrl</stringProp>
+                  <stringProp name="Argument.value">share.analytics.patsnap.cn</stringProp>
+                  <stringProp name="Argument.desc">分享URL</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="shareReferer" elementType="Argument">
+                  <stringProp name="Argument.name">shareReferer</stringProp>
+                  <stringProp name="Argument.value">http://share.analytics.patsnap.cn/</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">share Referer</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="SearchResult通用参数" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="semanticJobId" elementType="Argument">
+                  <stringProp name="Argument.name">semanticJobId</stringProp>
+                  <stringProp name="Argument.value">d98d7947-c331-4f16-b2b9-0438b283bf34</stringProp>
+                  <stringProp name="Argument.desc">Semanticquery的jobId</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="chemicalJobId" elementType="Argument">
+                  <stringProp name="Argument.name">chemicalJobId</stringProp>
+                  <stringProp name="Argument.value">6850781,12658395,16072318,46173311,6850741</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">chemicalquery的jobId</stringProp>
+                </elementProp>
+                <elementProp name="insightsJobId" elementType="Argument">
+                  <stringProp name="Argument.name">insightsJobId</stringProp>
+                  <stringProp name="Argument.value">bcf918f8d1df4c37a7aca8fd32141ece</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">insightsquery的jobId</stringProp>
+                </elementProp>
+                <elementProp name="BulkSearchJobId" elementType="Argument">
+                  <stringProp name="Argument.name">BulkSearchJobId</stringProp>
+                  <stringProp name="Argument.value">fd26bc6-da0d-444f-979f-60884cfb5749</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">EP0867397A1 EP0867397B1 EM0002926020001S WO2006043691A1 US20160362472A1</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="BulkSearch通用参数" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="bulk_job_id" elementType="Argument">
+                  <stringProp name="Argument.name">bulk_job_id</stringProp>
+                  <stringProp name="Argument.value">a5f63ba7-cdb3-4b21-9ac8-a83f3c43f490</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">JP4884640B2;US3851733;JP2002528817A;CN105681112A;WO2012139499A1</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="SemanticSearch通用参数" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="semantic_job_id" elementType="Argument">
+                  <stringProp name="Argument.name">semantic_job_id</stringProp>
+                  <stringProp name="Argument.value">d9bd55bb-c8ca-4dd2-ad02-63104bf33b4f</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="semantic_an" elementType="Argument">
+                  <stringProp name="Argument.name">semantic_an</stringProp>
+                  <stringProp name="Argument.value">华为技术有限公司</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="semantic_regex" elementType="Argument">
+                  <stringProp name="Argument.name">semantic_regex</stringProp>
+                  <stringProp name="Argument.value">US20110034201A1</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="ChemicalSearch通用参数" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="chemical_job_id" elementType="Argument">
+                  <stringProp name="Argument.name">chemical_job_id</stringProp>
+                  <stringProp name="Argument.value">962,447138,4369583,449052,53384662</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="History通用参数" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="his_patentId" elementType="Argument">
+                  <stringProp name="Argument.name">his_patentId</stringProp>
+                  <stringProp name="Argument.value">BB58B0358D2E441E66604B8D612565849772CBD831CA09660827C08F3C581432F9E53BDD797C071AB9B3496116D7CE358EBE23797CB70EB26C96A012D243EE42AA07133D220D4CD0</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="his_patentPN" elementType="Argument">
+                  <stringProp name="Argument.name">his_patentPN</stringProp>
+                  <stringProp name="Argument.value">EP1055633A1</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="his_patentTitle" elementType="Argument">
+                  <stringProp name="Argument.name">his_patentTitle</stringProp>
+                  <stringProp name="Argument.value">Elevator group control apparatus and elevator group control method</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="his_workspaceId" elementType="Argument">
+                  <stringProp name="Argument.name">his_workspaceId</stringProp>
+                  <stringProp name="Argument.value">b340b4d19d294f87abddb139b338f8bc</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="his_folderId" elementType="Argument">
+                  <stringProp name="Argument.name">his_folderId</stringProp>
+                  <stringProp name="Argument.value">c38122a6bcf5471d83378bec22430019</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="his_workspaceName" elementType="Argument">
+                  <stringProp name="Argument.name">his_workspaceName</stringProp>
+                  <stringProp name="Argument.value">History_DonotDelete</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="his_folderName" elementType="Argument">
+                  <stringProp name="Argument.name">his_folderName</stringProp>
+                  <stringProp name="Argument.value">history</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="his_landscape_jobId" elementType="Argument">
+                  <stringProp name="Argument.name">his_landscape_jobId</stringProp>
+                  <stringProp name="Argument.value">20ec3806-0ca1-4056-933c-8711ee032d72</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="his_search_query" elementType="Argument">
+                  <stringProp name="Argument.name">his_search_query</stringProp>
+                  <stringProp name="Argument.value">phone</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="his_tzOffset" elementType="Argument">
+                  <stringProp name="Argument.name">his_tzOffset</stringProp>
+                  <stringProp name="Argument.value">480</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="his_bulkSearch_pns" elementType="Argument">
+                  <stringProp name="Argument.name">his_bulkSearch_pns</stringProp>
+                  <stringProp name="Argument.value">EP1669886A1,EP1711936A2</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Release参数" enabled="false"/>
+          <hashTree>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="全局参数" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="userName" elementType="Argument">
+                  <stringProp name="Argument.name">userName</stringProp>
+                  <stringProp name="Argument.value">test@test.com</stringProp>
+                  <stringProp name="Argument.desc">用户登录账号</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="password" elementType="Argument">
+                  <stringProp name="Argument.name">password</stringProp>
+                  <stringProp name="Argument.value">test123456</stringProp>
+                  <stringProp name="Argument.desc">用户密码</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="loginUrl" elementType="Argument">
+                  <stringProp name="Argument.name">loginUrl</stringProp>
+                  <stringProp name="Argument.value">passport.patsnap.com</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">登录URL</stringProp>
+                </elementProp>
+                <elementProp name="baseUrl" elementType="Argument">
+                  <stringProp name="Argument.name">baseUrl</stringProp>
+                  <stringProp name="Argument.value">analytics.patsnap.com</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">网站基础URL</stringProp>
+                </elementProp>
+                <elementProp name="headReferer" elementType="Argument">
+                  <stringProp name="Argument.name">headReferer</stringProp>
+                  <stringProp name="Argument.value">http://analytics.patsnap.com/</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">Header参数里的主网站URL地址</stringProp>
+                </elementProp>
+                <elementProp name="path--" elementType="Argument">
+                  <stringProp name="Argument.name">path--</stringProp>
+                  <stringProp name="Argument.value">/Users/zhangshu/Documents/Project/Automation/JmeterProject/src/test/java/Tools.java</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">本地java类</stringProp>
+                </elementProp>
+                <elementProp name="path" elementType="Argument">
+                  <stringProp name="Argument.name">path</stringProp>
+                  <stringProp name="Argument.value">C:\Users\patsnap\.jenkins\jobs\Web_Api_Testing_Pro\workspace\src\test\java\Tools.java</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">Jenkins  PRODUCTION java类</stringProp>
+                </elementProp>
+                <elementProp name="pathSave" elementType="Argument">
+                  <stringProp name="Argument.name">pathSave</stringProp>
+                  <stringProp name="Argument.value">C:\Users\patsnap\.jenkins\jobs\Web_Api_Testing_Release\workspace\src\test\modules</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pathSave--" elementType="Argument">
+                  <stringProp name="Argument.name">pathSave--</stringProp>
+                  <stringProp name="Argument.value">/Users/zhangshu/Documents/Project/Automation/JmeterProject/src/test/modules</stringProp>
+                  <stringProp name="Argument.desc">保存路径</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="client_id" elementType="Argument">
+                  <stringProp name="Argument.name">client_id</stringProp>
+                  <stringProp name="Argument.value">f58bbdfdd63549dbb64fed4b816c8bfc</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">项目ID</stringProp>
+                </elementProp>
+                <elementProp name="shortWait" elementType="Argument">
+                  <stringProp name="Argument.name">shortWait</stringProp>
+                  <stringProp name="Argument.value">1000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">短暂等待时间</stringProp>
+                </elementProp>
+                <elementProp name="middleWait" elementType="Argument">
+                  <stringProp name="Argument.name">middleWait</stringProp>
+                  <stringProp name="Argument.value">3000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">中等</stringProp>
+                </elementProp>
+                <elementProp name="longWait" elementType="Argument">
+                  <stringProp name="Argument.name">longWait</stringProp>
+                  <stringProp name="Argument.value">5000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">长</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Workspace通用参数" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="autoUpdateWorkspaceId" elementType="Argument">
+                  <stringProp name="Argument.name">autoUpdateWorkspaceId</stringProp>
+                  <stringProp name="Argument.value">ed802c2d1854438e9d983988be2288ce</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">监控自动收录脚本</stringProp>
+                </elementProp>
+                <elementProp name="autoUpdateFolderId" elementType="Argument">
+                  <stringProp name="Argument.name">autoUpdateFolderId</stringProp>
+                  <stringProp name="Argument.value">d01f90171433482387f19df09c44b40c</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">监控自动收录脚本以及迁移复制专利等</stringProp>
+                </elementProp>
+                <elementProp name="wsPatentId" elementType="Argument">
+                  <stringProp name="Argument.name">wsPatentId</stringProp>
+                  <stringProp name="Argument.value">CB70F1A474E54B2E0450D06D9886F1FF57350CBEE3FBEAB9D99130C5CC85268274FB05BDBBECEC1669E73842C1BA2F48F3EC5467A71C13016CF44DB660C6B76BF87E0A2626B541AF</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">标引搜索等对应的patent</stringProp>
+                </elementProp>
+                <elementProp name="wsPatent" elementType="Argument">
+                  <stringProp name="Argument.name">wsPatent</stringProp>
+                  <stringProp name="Argument.value">CN104639043A</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">ID对应的PN号</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Matrix通用参数" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="matrixWorkspace" elementType="Argument">
+                  <stringProp name="Argument.name">matrixWorkspace</stringProp>
+                  <stringProp name="Argument.value">ed802c2d1854438e9d983988be2288ce</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">矩阵分析Workspace</stringProp>
+                </elementProp>
+                <elementProp name="matrixFolder" elementType="Argument">
+                  <stringProp name="Argument.name">matrixFolder</stringProp>
+                  <stringProp name="Argument.value">d01f90171433482387f19df09c44b40c</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">矩阵分析Folder</stringProp>
+                </elementProp>
+                <elementProp name="matrixOption1" elementType="Argument">
+                  <stringProp name="Argument.name">matrixOption1</stringProp>
+                  <stringProp name="Argument.value">6ff71938fbd04d0fb6b33b587b7dc65b</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">三个分析option</stringProp>
+                </elementProp>
+                <elementProp name="matrixOption2" elementType="Argument">
+                  <stringProp name="Argument.name">matrixOption2</stringProp>
+                  <stringProp name="Argument.value">8515928757864ad09dc5c3be2dec79a6</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="matrixOption3" elementType="Argument">
+                  <stringProp name="Argument.name">matrixOption3</stringProp>
+                  <stringProp name="Argument.value">38841b4d3235440f953813996b87d4ac</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="PatentView通用参数" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="job_id_semantic" elementType="Argument">
+                  <stringProp name="Argument.name">job_id_semantic</stringProp>
+                  <stringProp name="Argument.value">e938f3c7-9fb9-4d0f-b5a3-815e55729ee9</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">semantic job id</stringProp>
+                </elementProp>
+                <elementProp name="job_id_insights" elementType="Argument">
+                  <stringProp name="Argument.name">job_id_insights</stringProp>
+                  <stringProp name="Argument.value">5356f522217c49cc9d76719b3b53085f</stringProp>
+                  <stringProp name="Argument.desc">insights job id</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pvp_workspace_id" elementType="Argument">
+                  <stringProp name="Argument.name">pvp_workspace_id</stringProp>
+                  <stringProp name="Argument.value">ed802c2d1854438e9d983988be2288ce</stringProp>
+                  <stringProp name="Argument.desc">workspace to patent view</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pvp_folder_id" elementType="Argument">
+                  <stringProp name="Argument.name">pvp_folder_id</stringProp>
+                  <stringProp name="Argument.value">d01f90171433482387f19df09c44b40c</stringProp>
+                  <stringProp name="Argument.desc">workspace  folder</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pvp_time" elementType="Argument">
+                  <stringProp name="Argument.name">pvp_time</stringProp>
+                  <stringProp name="Argument.value">1481868949515</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+          </hashTree>
+          <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Dev参数" enabled="false"/>
+          <hashTree>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="全局参数" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="userName" elementType="Argument">
+                  <stringProp name="Argument.name">userName</stringProp>
+                  <stringProp name="Argument.value">test@test.com</stringProp>
+                  <stringProp name="Argument.desc">用户登录账号</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="password" elementType="Argument">
+                  <stringProp name="Argument.name">password</stringProp>
+                  <stringProp name="Argument.value">test123456</stringProp>
+                  <stringProp name="Argument.desc">用户密码</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="loginUrl" elementType="Argument">
+                  <stringProp name="Argument.name">loginUrl</stringProp>
+                  <stringProp name="Argument.value">qa-passport.patsnap.com</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">登录URL</stringProp>
+                </elementProp>
+                <elementProp name="baseUrl" elementType="Argument">
+                  <stringProp name="Argument.name">baseUrl</stringProp>
+                  <stringProp name="Argument.value">dev-analytics.patsnap.com</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">基础URL</stringProp>
+                </elementProp>
+                <elementProp name="headReferer" elementType="Argument">
+                  <stringProp name="Argument.name">headReferer</stringProp>
+                  <stringProp name="Argument.value">http://dev-analytics.patsnap.com/</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="path" elementType="Argument">
+                  <stringProp name="Argument.name">path</stringProp>
+                  <stringProp name="Argument.value">C:\Users\Administrator\IdeaProjects\auto-test-webapi\src\test\java\Tools.java</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">本地java位置</stringProp>
+                </elementProp>
+                <elementProp name="path--" elementType="Argument">
+                  <stringProp name="Argument.name">path--</stringProp>
+                  <stringProp name="Argument.value">C:\Users\patsnap\.jenkins\jobs\Web_Api_Testing_Dev\workspace\src\test\java\Tools.java</stringProp>
+                  <stringProp name="Argument.desc">Jenkins DEV production</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pathSave" elementType="Argument">
+                  <stringProp name="Argument.name">pathSave</stringProp>
+                  <stringProp name="Argument.value">/Users/zhangshu/Documents/Project/Automation/JmeterProject/src/test/modules</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="client_id" elementType="Argument">
+                  <stringProp name="Argument.name">client_id</stringProp>
+                  <stringProp name="Argument.value">43af9e226139475f8fc17b54c5c630db</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="shortWait" elementType="Argument">
+                  <stringProp name="Argument.name">shortWait</stringProp>
+                  <stringProp name="Argument.value">1000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="middleWait" elementType="Argument">
+                  <stringProp name="Argument.name">middleWait</stringProp>
+                  <stringProp name="Argument.value">3000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="longWait" elementType="Argument">
+                  <stringProp name="Argument.name">longWait</stringProp>
+                  <stringProp name="Argument.value">5000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Workspace通用参数" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="autoUpdateWorkspaceId" elementType="Argument">
+                  <stringProp name="Argument.name">autoUpdateWorkspaceId</stringProp>
+                  <stringProp name="Argument.value">ed802c2d1854438e9d983988be2288ce</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">监控自动收录脚本</stringProp>
+                </elementProp>
+                <elementProp name="autoUpdateFolderId" elementType="Argument">
+                  <stringProp name="Argument.name">autoUpdateFolderId</stringProp>
+                  <stringProp name="Argument.value">d01f90171433482387f19df09c44b40c</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">监控自动收录脚本以及迁移复制专利等</stringProp>
+                </elementProp>
+                <elementProp name="wsPatentId" elementType="Argument">
+                  <stringProp name="Argument.name">wsPatentId</stringProp>
+                  <stringProp name="Argument.value">CB70F1A474E54B2E0450D06D9886F1FF57350CBEE3FBEAB9D99130C5CC85268274FB05BDBBECEC1669E73842C1BA2F48F3EC5467A71C13016CF44DB660C6B76BF87E0A2626B541AF</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">标引搜索等对应的patent</stringProp>
+                </elementProp>
+                <elementProp name="wsPatent" elementType="Argument">
+                  <stringProp name="Argument.name">wsPatent</stringProp>
+                  <stringProp name="Argument.value">CN104639043A</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">ID对应的PN号</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Matrix通用参数" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="matrixWorkspace" elementType="Argument">
+                  <stringProp name="Argument.name">matrixWorkspace</stringProp>
+                  <stringProp name="Argument.value">ed802c2d1854438e9d983988be2288ce</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">矩阵分析Workspace</stringProp>
+                </elementProp>
+                <elementProp name="matrixFolder" elementType="Argument">
+                  <stringProp name="Argument.name">matrixFolder</stringProp>
+                  <stringProp name="Argument.value">d01f90171433482387f19df09c44b40c</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">矩阵分析Folder</stringProp>
+                </elementProp>
+                <elementProp name="matrixOption1" elementType="Argument">
+                  <stringProp name="Argument.name">matrixOption1</stringProp>
+                  <stringProp name="Argument.value">6ff71938fbd04d0fb6b33b587b7dc65b</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">三个分析option</stringProp>
+                </elementProp>
+                <elementProp name="matrixOption2" elementType="Argument">
+                  <stringProp name="Argument.name">matrixOption2</stringProp>
+                  <stringProp name="Argument.value">8515928757864ad09dc5c3be2dec79a6</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="matrixOption3" elementType="Argument">
+                  <stringProp name="Argument.name">matrixOption3</stringProp>
+                  <stringProp name="Argument.value">38841b4d3235440f953813996b87d4ac</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="PatentView通用参数" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="job_id_semantic" elementType="Argument">
+                  <stringProp name="Argument.name">job_id_semantic</stringProp>
+                  <stringProp name="Argument.value">e938f3c7-9fb9-4d0f-b5a3-815e55729ee9</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">semantic job id</stringProp>
+                </elementProp>
+                <elementProp name="job_id_insights" elementType="Argument">
+                  <stringProp name="Argument.name">job_id_insights</stringProp>
+                  <stringProp name="Argument.value">5356f522217c49cc9d76719b3b53085f</stringProp>
+                  <stringProp name="Argument.desc">insights job id</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pvp_workspace_id" elementType="Argument">
+                  <stringProp name="Argument.name">pvp_workspace_id</stringProp>
+                  <stringProp name="Argument.value">ed802c2d1854438e9d983988be2288ce</stringProp>
+                  <stringProp name="Argument.desc">workspace to patent view</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pvp_folder_id" elementType="Argument">
+                  <stringProp name="Argument.name">pvp_folder_id</stringProp>
+                  <stringProp name="Argument.value">d01f90171433482387f19df09c44b40c</stringProp>
+                  <stringProp name="Argument.desc">workspace  folder</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pvp_time" elementType="Argument">
+                  <stringProp name="Argument.name">pvp_time</stringProp>
+                  <stringProp name="Argument.value">1481868949515</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="SearchResult通用参数" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="semanticJobId" elementType="Argument">
+                  <stringProp name="Argument.name">semanticJobId</stringProp>
+                  <stringProp name="Argument.value">d98d7947-c331-4f16-b2b9-0438b283bf34</stringProp>
+                  <stringProp name="Argument.desc">Semanticquery的jobId</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="chemicalJobId" elementType="Argument">
+                  <stringProp name="Argument.name">chemicalJobId</stringProp>
+                  <stringProp name="Argument.value">6850781,12658395,16072318,46173311,6850741</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">Chemicalquery的jobId</stringProp>
+                </elementProp>
+                <elementProp name="insightsJobId" elementType="Argument">
+                  <stringProp name="Argument.name">insightsJobId</stringProp>
+                  <stringProp name="Argument.value">f7d3a3c79590440bb4c8875ae02bf62d</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">Insightsquery的jobId</stringProp>
+                </elementProp>
+                <elementProp name="BulkSearchJobId" elementType="Argument">
+                  <stringProp name="Argument.name">BulkSearchJobId</stringProp>
+                  <stringProp name="Argument.value">9c36969e-09a3-422e-b5ef-d30cf9185dce</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">[BULK]WO2009155799A1,US20110192682A1/2/9c36969e-09a3-422e-b5ef-d30cf9185dce</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="BulkSearch通用参数" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="bulk_job_id" elementType="Argument">
+                  <stringProp name="Argument.name">bulk_job_id</stringProp>
+                  <stringProp name="Argument.value">4f0f78c5-b9a0-40f2-8154-0480731781dc</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.desc">JP4884640B2;US3851733;JP2002528817A;CN105681112A;WO2012139499A1</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="SemanticSearch通用参数" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="semantic_job_id" elementType="Argument">
+                  <stringProp name="Argument.name">semantic_job_id</stringProp>
+                  <stringProp name="Argument.value">5c1360a1-e3d1-4c66-a692-25a90273537c</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="semantic_an" elementType="Argument">
+                  <stringProp name="Argument.name">semantic_an</stringProp>
+                  <stringProp name="Argument.value">国家电网公司</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="semantic_regex" elementType="Argument">
+                  <stringProp name="Argument.name">semantic_regex</stringProp>
+                  <stringProp name="Argument.value">CN106128108A</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+            <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="ChemicalSearch通用参数" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="chemical_job_id" elementType="Argument">
+                  <stringProp name="Argument.name">chemical_job_id</stringProp>
+                  <stringProp name="Argument.value">962,447138,4369583,449052,53384662</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </Arguments>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Login" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="from" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">from</stringProp>
+                  <stringProp name="Argument.value">analytics</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="redirect_uri" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">redirect_uri</stringProp>
+                  <stringProp name="Argument.value">${headReferer}initSession</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="client_id" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">client_id</stringProp>
+                  <stringProp name="Argument.value">${client_id}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="username" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">username</stringProp>
+                  <stringProp name="Argument.value">${userName}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="password" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">password</stringProp>
+                  <stringProp name="Argument.value">${password}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="rememberMe" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">rememberMe</stringProp>
+                  <stringProp name="Argument.value">0</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${loginUrl}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/loginsubmit</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="TestPlan.comments">Detected the start of a redirect chain</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">${headReferer}</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3</stringProp>
+                </elementProp>
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:49.0) Gecko/20100101 Firefox/49.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Logout" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/logout</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

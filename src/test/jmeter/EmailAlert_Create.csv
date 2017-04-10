@@ -1,0 +1,6 @@
+0|bikes|52373|query email alert|New|aa@patsnap.com|weekly|query|Sunday||true|
+0|PN:US5948040|1|12345|New|a1@a63.com;a2@patsnap.com|daily|query|||true|
+0|PN:US5948040|1|test123test123dddtestest|New|a1@a63.com;a2@patsnap.com|daily|query|||true|
+1|auto car|123|alertPage_query|New|aaa@patsnap.com|monthly|query|31||true|CN,CNA,CNB,CNU,CND
+2|alertPage_workspace||alertPage_workspace|New,Legal,INPADOC,Cited,Expired,Litigation,License,Comments|workspace1@patsnap.com|weekly|workspace|Sunday||true|
+3|workspacePage_workspace||workspacePage_workspace|New,Legal,INPADOC||monthly|workspace|1||false|
